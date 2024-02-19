@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "50f5b43d-e760-4a1c-8352-3af6fce0920b",
+		"name": "Video Tracking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-50f5b43d-e760-4a1c-8352-3af6fce0920b?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Video Tracking Service Syntax Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/tracking?assetId=&trackingEvent=&second=",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						"tracking"
+					],
+					"query": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "trackingEvent",
+							"value": ""
+						},
+						{
+							"key": "second",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example: Track Video with Seconds Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"filters\": [  \n        {  \n            \"fieldName\": \"contentDefinitionId\",  \n            \"operator\": \"Equals\",  \n            \"values\": \"<searching ID goes here>\"  \n        }  \n    ],  \n    \"returnedFieldNames\": [  \n        \"title\"  \n    ],  \n    \"sortFields\": [  \n        {  \n            \"fieldName\": \"title\",  \n            \"sortType\": \"Ascending\"  \n        }  \n    ]  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/tracking?assetId=&trackingEvent=0&second=120",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						"tracking"
+					],
+					"query": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "trackingEvent",
+							"value": "0"
+						},
+						{
+							"key": "second",
+							"value": "120"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example: Track Video with First Quartile Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/tracking?assetId=&trackingEvent=1",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						"tracking"
+					],
+					"query": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "trackingEvent",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example: Track Video with Midpoint Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/tracking?assetId=&trackingEvent=2",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						"tracking"
+					],
+					"query": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "trackingEvent",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example: Track Video with Third Quartile Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/tracking?assetId=&trackingEvent=3",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						"tracking"
+					],
+					"query": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "trackingEvent",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example: Track Video with Complete Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/tracking?assetId=&trackingEvent=4",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						"tracking"
+					],
+					"query": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "trackingEvent",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example: Track Video with Hidden Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/tracking?assetId=&trackingEvent=5",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						"tracking"
+					],
+					"query": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "trackingEvent",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

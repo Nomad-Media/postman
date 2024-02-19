@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "487a788c-921d-47b0-bb45-a0de86893e54",
+		"name": "Live Channel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-487a788c-921d-47b0-bb45-a0de86893e54?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Clip Live Channel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startTimeCode\":\"{startTimeCode}\",\r\n    \"endTimeCode\":\"{endTimeCode}\",\r\n    \"title\":\"{title}\",\r\n    \"outputFolderId\":\"{outputFolderId}\",\r\n\t\"tags\": \"{tags}\",\r\n\t\"collections\": \"{collections}\",\r\n\t\"relatedContent\": \"{relatedContent}\",\r\n\t\"videoBitrate\": \"{videoBitrate}\",\r\n\t\"audioTracks\": \"{audioTracks}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId/clip",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId",
+						"clip"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Live Channel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{name}\",\r\n    \"routeName\": \"{routeName}\",\r\n    \"type\": {\r\n        \"lookupId\": \"{lookupId}\",\r\n        \"description\": \"{description}\"\r\n    },\r\n\t\"enableHighAvailability\": \"{enableHighAvailability}\",\r\n\t\"enableLiveClipping\": \"{enableHighAvailability}\",\r\n\t\"externalOutputProfile\": \"{externalOutputProfile}\",\r\n\t\"isSecureOutput\": \"{isSecureOutput}\",\r\n\t\"outputScreenshots\": \"{outputScreenshots}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId/clip",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId",
+						"clip"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Live Channel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Live Channel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Live Channels",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Live Channel Refresh",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/refresh",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Next Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId/nextEvent",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId",
+						"nextEvent"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Live Channel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId/start",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId",
+						"start"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stop Live Channel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId/stop",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId",
+						"stop"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Live Channel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"{id}\",\r\n    \"name\": \"{name}\",\r\n    \"routeName\": \"{routeName}\",\r\n    \"type\": {\r\n        \"lookupId\": \"{lookupId}\",\r\n        \"description\": \"{description}\"\r\n    },\r\n\t\"enableHighAvailability\": \"{enableHighAvailability}\",\r\n\t\"enableLiveClipping\": \"{enableHighAvailability}\",\r\n\t\"externalOutputProfile\": \"{externalOutputProfile}\",\r\n\t\"isSecureOutput\": \"{isSecureOutput}\",\r\n\t\"outputScreenshots\": \"{outputScreenshots}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

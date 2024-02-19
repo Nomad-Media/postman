@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "fd36e306-7e3d-40c2-bbd8-dce3157e64f9",
+		"name": "Event",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-fd36e306-7e3d-40c2-bbd8-dce3157e64f9?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Add Live Schedule To Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"series\":{\r\n        \"description\":\"{seriesDescription}\",\r\n        \"id\":\"{seriesId}\"\r\n    },\r\n    \"contentId\":\"{contentId}\",\r\n    \"overrideSettings\":\"{overrideSettings}\",\r\n    \"slateVideo\":{\r\n        \"description\":\"{slateVideoDescription}\",\r\n        \"id\":\"{slateVideoId}\"\r\n    },\r\n    \"prerollVideo\":{\r\n        \"description\":\"{prerollVideoDescription}\",\r\n        \"id\":\"{prerollVideoId}\"\r\n    },\r\n    \"postrollVideo\":{\r\n        \"description\":\"{postrollVideoDescription}\",\r\n        \"id\":\"{postrollVideoId}\"\r\n    },\r\n    \"archiveFolderAsset\":{\r\n        \"description\":\"{archiveFolderAssetDescription}\",\r\n        \"id\":\"{archiveFolderAssetId}\"\r\n    },\r\n    \"primaryLiveInput\":{\r\n        \"description\":\"{primaryLiveInputDescription}\",\r\n        \"id\":\"{primaryLiveInputId}\"\r\n    },\r\n    \"primaryLiveStreamInputUrl\":\"{primaryLiveStreamInputUrl}\",\r\n    \"backupLiveInput\":{\r\n        \"description\":\"{backupLiveInputDescription}\",\r\n        \"id\":\"{backupLiveInputId}\"\r\n    },\r\n    \"backupLiveStreamInputUrl\":\"{backupLiveStreamInputUrl}\",\r\n    \"externalOutputProfiles\":[\r\n        {\r\n            \"description\":\"{externalOutputProfileDescription}\",\r\n            \"id\":\"{externalOutputProfileId}\"\r\n        }\r\n    ],\r\n    \"isSecureOutput\":\"{isSecureOutput}\",\r\n    \"status\":{\r\n        \"enumValue\":\"{statusEnumValue}\",\r\n        \"description\":\"{statusDescription}\",\r\n        \"type\":\"{statusType}\",\r\n        \"lookupTypeId\":\"{statusLookupTypeId}\",\r\n        \"id\":\"{statusId}\"\r\n    },\r\n    \"statusMessage\":\"{statusMessage}\",\r\n    \"liveChannel\":\"{liveChannel}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveSchedule",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveSchedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/content/new?contentDefinitionId=:contentDefinitionId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"content",
+						"new"
+					],
+					"query": [
+						{
+							"key": "contentDefinitionId",
+							"value": ":contentDefinitionId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/content/:id?contentDefinitionId=:contentDefinitionId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"content",
+						":id"
+					],
+					"query": [
+						{
+							"key": "contentDefinitionId",
+							"value": ":contentDefinitionId"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Live Schedule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveSchedule/content/:eventId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveSchedule",
+						"content",
+						":eventId"
+					],
+					"variable": [
+						{
+							"key": "eventId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Live Schedule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveSchedule/content/:eventId/start",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveSchedule",
+						"content",
+						":eventId",
+						"start"
+					],
+					"variable": [
+						{
+							"key": "eventId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stop Live Schedule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveSchedule/content/:eventId/stop",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveSchedule",
+						"content",
+						":eventId",
+						"stop"
+					],
+					"variable": [
+						{
+							"key": "eventId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contentId\": \"{contentId}\",\r\n    \"contentDefinitionId\": \"{contentDefinitionId}\",\r\n    \"properties\": {\r\n        \"name\": \"{nanme}\",\r\n        \"slug\": \"{slug}\",\r\n        \"series\": {\r\n            \"id\": \"{seriesId}\",\r\n            \"description\": \"{seriesDescription}\",\r\n            \"overallTotal\": \"{seriesOverallTotal}\"\r\n        },\r\n        \"startDatetime\": \"{startDatetime}\",\r\n        \"endDateTime\": \"{endDatetime}\"\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/content/:contentDefinitionId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"content",
+						":contentDefinitionId"
+					],
+					"variable": [
+						{
+							"key": "contentDefinitionId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "dcb38db2-9838-4b6f-8048-251009da16d5",
+		"name": "Live Operator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-dcb38db2-9838-4b6f-8048-251009da16d5?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Cancel Broadcast",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveOperator/:operatorId/cancel",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveOperator",
+						":operatorId",
+						"cancel"
+					],
+					"variable": [
+						{
+							"key": "operatorId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Segment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveOperator/:operatorId/cancelSegment",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveOperator",
+						":operatorId",
+						"cancelSegment"
+					],
+					"variable": [
+						{
+							"key": "operatorId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Complete Segment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tags\": \"{tags}\",\r\n\t\"relatedContent\": \"{relatedContent}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveOperator/:operatorId/completeSegment",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveOperator",
+						":operatorId",
+						"completeSegment"
+					],
+					"variable": [
+						{
+							"key": "operatorId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Completed Segments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveOperator/:operatorId/segments",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveOperator",
+						":operatorId",
+						"segments"
+					],
+					"variable": [
+						{
+							"key": "operatorId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Live Operator",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveOperator/:operatorId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveOperator",
+						":operatorId"
+					],
+					"variable": [
+						{
+							"key": "operatorId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Live Operators",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveOperator",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveOperator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Broadcast",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"f2ce38d1-e21c-4f6e-b2f1-1ea10a68add5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveOperator/start",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveOperator",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Segment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveOperator/:operatorId/startSegment",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveOperator",
+						":operatorId",
+						"startSegment"
+					],
+					"variable": [
+						{
+							"key": "operatorId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stop Broadcast",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/liveOperator/:operatorId/stop",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"liveOperator",
+						":operatorId",
+						"stop"
+					],
+					"variable": [
+						{
+							"key": "operatorId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

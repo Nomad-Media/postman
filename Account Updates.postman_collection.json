@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "1283c62c-3064-4f3b-bbbd-c12a4ef67412",
+		"name": "Account Updates",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-1283c62c-3064-4f3b-bbbd-c12a4ef67412?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Change Email",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"newEmail\": \"{newEmail}\",\r\n\t\"password\": \"{password}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serverApiUrl}}/account/change-email",
+					"host": [
+						"{{serverApiUrl}}"
+					],
+					"path": [
+						"account",
+						"change-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"{password}\",\n    \"newPassword\": \"{newPassword}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/account/change-password",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"account",
+						"change-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/account/user",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"account",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"address\": \"{address}\",\n\t\"address2\": \"{address2}\",\n\t\"city\": \"{city}\",\n\t\"state\": \"{state}\",\n\t\"country\": \"{country}\",\n\t\"firstName\": \"{firstName}\",\n\t\"lastName\": \"{lastName}\",\n\t\"phone\": \"{phone}\",\n\t\"phoneExt\": \"{phoneExt}\",\n\t\"postalCode\": \"{postalCode}\",\n\t\"organization\": \"{organization}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/account",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"account"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

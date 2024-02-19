@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "b875f2ea-6b89-4863-b2b2-9a215c764ff0",
+		"name": "Media",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-b875f2ea-6b89-4863-b2b2-9a215c764ff0?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Clear Continue Watching",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/clear-watching?userId=:userId&assetId=:assetId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"clear-watching"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": ":userId"
+						},
+						{
+							"key": "assetId",
+							"value": ":assetId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clear Watchlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/clear-watchlist?userId=:userId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"clear-watchlist"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": ":userId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Form",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"formDataKey1\": \"formDataValue1\",\n\t\"formDataKey2\": \"formDataValue2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/form/:contentDefinitionId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"form",
+						":contentDefinitionId"
+					],
+					"variable": [
+						{
+							"key": "contentDefinitionId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Content Cookies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/set-cookies/:contentId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"set-cookies",
+						":contentId"
+					],
+					"variable": [
+						{
+							"key": "contentId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Default Site Config",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/config",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Dynamic Content",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/content/:contentId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"content",
+						":contentId"
+					],
+					"variable": [
+						{
+							"key": "contentId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Dynamic Contents",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/content",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"content"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Media Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/group/:contentId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"group",
+						":contentId"
+					],
+					"variable": [
+						{
+							"key": "contentId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Media Item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/item/:contentId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"item",
+						":contentId"
+					],
+					"variable": [
+						{
+							"key": "contentId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Content",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/my-content",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"my-content"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/my-group/:contentId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"my-group",
+						":contentId"
+					],
+					"variable": [
+						{
+							"key": "contentId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Site Config",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/config/:contentId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"config",
+						":contentId"
+					],
+					"variable": [
+						{
+							"key": "contentId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Media Search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"searchQuery\": \"{searchQuery}\",\r\n\t\"ids\": \"{ids}\",\r\n\t\"sortFields\": \"{sortFields}\",\r\n\t\"pageOffset\": \"{pageOffset}\",\r\n\t\"pageSize\": \"{pageSize}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/media/search",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"media",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

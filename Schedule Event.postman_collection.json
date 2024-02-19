@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "e9574317-ec8c-4d2f-99ed-31c70dbe26c6",
+		"name": "Schedule Event",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-e9574317-ec8c-4d2f-99ed-31c70dbe26c6?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Add Asset Schedule Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": {\r\n        \"id\": \"{id}\",\r\n        \"description\": \"{description}\"\r\n    },\r\n    \"channelId\": \"{channelId}\",\r\n    \"asset\": {\r\n        \"id\": \"{id}\",\r\n        \"description\": \"{description}\"\r\n    },\r\n    \"isLoop\": \"{isLoop}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId/liveScheduleEvent",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId",
+						"liveScheduleEvent"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Input Schedule Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": {\r\n        \"id\": \"{id}\",\r\n        \"description\": \"{description}\"\r\n    },\r\n    \"channelId\": \"{channelId}\",\r\n    \"liveInput\": {\r\n        \"id\": \"{id}\",\r\n        \"description\": \"{description}\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId/liveScheduleEvent",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId",
+						"liveScheduleEvent"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Schedule Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId/liveScheduleEvent/:scheduleEventId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId",
+						"liveScheduleEvent",
+						":scheduleEventId"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						},
+						{
+							"key": "scheduleEventId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move Schedule Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"previousScheduleEventId\": \"{previousScheduleEventId}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId/liveScheduleEvent/:scheduleEventId/move",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId",
+						"liveScheduleEvent",
+						":scheduleEventId",
+						"move"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						},
+						{
+							"key": "scheduleEventId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Schedule Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId/liveScheduleEvent",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId",
+						"liveScheduleEvent"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Asset Schedule Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"{id}\",\r\n    \"type\": {\r\n        \"id\": \"{id}\",\r\n        \"description\": \"{description}\"\r\n    },\r\n    \"channelId\": \"{channelId}\",\r\n    \"asset\": {\r\n        \"id\": \"{id}\",\r\n        \"description\": \"{description}\"\r\n    },\r\n    \"isLoop\": \"{isLoop}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId/liveScheduleEvent/:scheduleEventId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId",
+						"liveScheduleEvent",
+						":scheduleEventId"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						},
+						{
+							"key": "scheduleEventId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Input Schedule Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"{id}\",\r\n    \"type\": {\r\n        \"id\": \"{id}\",\r\n        \"description\": \"{description}\"\r\n    },\r\n    \"channelId\": \"{channelId}\",\r\n    \"liveInput\": {\r\n        \"id\": \"{id}\",\r\n        \"description\": \"{description}\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveChannel/:channelId/liveScheduleEvent/:scheduleEventId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveChannel",
+						":channelId",
+						"liveScheduleEvent",
+						":scheduleEventId"
+					],
+					"variable": [
+						{
+							"key": "channelId",
+							"value": ""
+						},
+						{
+							"key": "scheduleEventId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

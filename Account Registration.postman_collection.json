@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "f6e6131a-4de2-4b5a-8c25-9c5c98f7eaff",
+		"name": "Account Registration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-f6e6131a-4de2-4b5a-8c25-9c5c98f7eaff?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = pm.response.json();",
+							"pm.environment.set(\"username\", response.email);",
+							"pm.environment.set(\"ID\", response.id);",
+							"pm.environment.set(\"password\", JSON.parse(request.data).password);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"{firstName}\",\n    \"lastName\": \"{lastName}\",\n    \"email\": \"{email}\",\n    \"password\": \"{password}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/account/register",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"account",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resend Code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\": \"{{username}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/account/resend-code",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"account",
+						"resend-code"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\": \"{{username}}\",\n    \"token\": \"{token}\" // Retrieved from email\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/account/verify",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"account",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

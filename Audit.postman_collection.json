@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "ab8146bf-6a88-4f62-9967-808a3a7a1b81",
+		"name": "Audit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-ab8146bf-6a88-4f62-9967-808a3a7a1b81?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Get Audit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/audit/:contentId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"audit",
+						":contentId"
+					],
+					"variable": [
+						{
+							"key": "contentId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

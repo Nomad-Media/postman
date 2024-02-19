@@ -1,0 +1,1301 @@
+{
+	"info": {
+		"_postman_id": "7738732f-ddfc-4246-9fa4-0dbeb428a595",
+		"name": "Schedule",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-7738732f-ddfc-4246-9fa4-0dbeb428a595?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Create Intelligent Playlist",
+			"item": [
+				{
+					"name": "Create Intelligent Playlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{name}\",\r\n    \"scheduleType\": \"4\",\r\n    \"thumbnailAsset\": \"{thumbnailAsset}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceApiUrl}}/admin/schedule",
+							"host": [
+								"{{serviceApiUrl}}"
+							],
+							"path": [
+								"admin",
+								"schedule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Intelligent Playlist Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\t\"collections\": \"{collections}\",\r\n\t\"endSearchData\": \"{endSearchData}\",\r\n    \"endSearchDurationInMinutes\": \"{endSearchDurationInMinutes}\",\r\n\t\"relatedContent\": \"{relatedContent}\",\r\n    \"scheduleItemType\": \"2\",\r\n\t\"searchDate\": \"{searchDate}\",\r\n    \"searchDurationInMinutes\": \"{searchDurationInMinutes}\",\r\n\t\"searchFilterType\": \"{searchFilterType}\",\r\n    \"sourceType\": \"2\",\r\n\t\"tags\": \"{tags}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentPlaylistId/item",
+							"host": [
+								"{{serviceApiUrl}}"
+							],
+							"path": [
+								"admin",
+								"schedule",
+								":intelligentPlaylistId",
+								"item"
+							],
+							"variable": [
+								{
+									"key": "intelligentPlaylistId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create Intelligent Schedule Item",
+			"item": [
+				{
+					"name": "Create Intelligent Schedule Item Asset",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"asset\": {\r\n        \"id\": \"{id}\"\r\n    },\r\n    \"days\": [\r\n        {\r\n            \"id\": \"{id}\",\r\n            \"description\": \"{description}\"\r\n        }\r\n    ],\r\n    \"durationTimeCode\": \"{durationTimeCode}\",\r\n    \"endTimeCode\": \"{endTimeCode}\",\r\n\t\"previousItem\": \"{previousItem}\",\r\n    \"scheduleItemType\": \"1\",\r\n    \"sourceType\": \"3\",\r\n    \"timeCode\": \"{timeCode}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/item",
+							"host": [
+								"{{serviceApiUrl}}"
+							],
+							"path": [
+								"admin",
+								"schedule",
+								":intelligentScheduleId",
+								"item"
+							],
+							"variable": [
+								{
+									"key": "intelligentScheduleId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Intelligent Schedule Item Live Channel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"days\": [\r\n        {\r\n            \"id\": \"{id}\",\r\n            \"description\": \"{description}\"\r\n        }\r\n    ],\r\n    \"durationTimeCode\": \"{durationTimeCode}\",\r\n    \"endTimeCode\": \"{endTimeCode}\",\r\n    \"liveChannel\": {\r\n        \"id\": \"{id}\",\r\n        \"description\": \"{description}\"\r\n    },\r\n\t\"previousItem\": \"{previousItem}\",\r\n    \"scheduleItemType\": \"1\",\r\n    \"sourceType\": \"4\",\r\n    \"timeCode\": \"{timeCode}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/item",
+							"host": [
+								"{{serviceApiUrl}}"
+							],
+							"path": [
+								"admin",
+								"schedule",
+								":intelligentScheduleId",
+								"item"
+							],
+							"variable": [
+								{
+									"key": "intelligentScheduleId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Schedule Item Playlist Schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"days\": [\r\n        {\r\n            \"id\": \"{id}\",\r\n            \"description\": \"{description}\"\r\n        }\r\n    ],\r\n    \"durationTimeCode\": \"{durationTimeCode}\",\r\n    \"endTimeCode\": \"{endTimeCode}\",\r\n    \"playlistSchedule\": {\r\n        \"id\": \"{id}\",\r\n        \"description\": \"{description}\"\r\n    },\r\n\t\"previousItem\": \"{previousItem}\",\r\n    \"scheduleItemType\": \"2\",\r\n    \"sourceType\": \"1\",\r\n    \"timeCode\": \"{timeCode}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceApiUrl}}/admin/schedule/:intellignetScheduleId/item",
+							"host": [
+								"{{serviceApiUrl}}"
+							],
+							"path": [
+								"admin",
+								"schedule",
+								":intellignetScheduleId",
+								"item"
+							],
+							"variable": [
+								{
+									"key": "intellignetScheduleId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Schedule Item Search FIlter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"collections\": \"{collections}\",\r\n    \"days\": [\r\n        {\r\n            \"id\": \"{id}\",\r\n            \"description\": \"{description}\"\r\n        }\r\n    ],\r\n    \"durationTimeCode\": \"{durationTimeCode}\",\r\n\t\"endSearchDate\": \"{endSearchDate}\",\r\n    \"endSearchDurationInMinutes\": \"{endSearchDurationInMinutes}\",\r\n    \"endTimeCode\": \"{endTimeCode}\",\r\n\t\"previousItem\": \"{previousItem}\",\r\n    \"scheduleItemType\": \"1\",\r\n\t\"searchDate\": \"{searchDate}\",\r\n    \"searchDurationInMinutes\": \"{searchDurationInMinutes}\",\r\n    \"searchFilterType\": \"{searchFilterType}\",\r\n    \"sourceType\": \"2\",\r\n\t\"tags\": \"{tags}\",\r\n    \"timeCode\": \"{timeCode}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/item",
+							"host": [
+								"{{serviceApiUrl}}"
+							],
+							"path": [
+								"admin",
+								"schedule",
+								":intelligentScheduleId",
+								"item"
+							],
+							"variable": [
+								{
+									"key": "intelligentScheduleId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update Intelligent Playlist",
+			"item": [
+				{
+					"name": "Update Intelligent Playlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{name}\",\r\n    \"scheduleType\": \"4\",\r\n    \"thumbnailAsset\": \"{thumbnailAsset}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentPlaylistId",
+							"host": [
+								"{{serviceApiUrl}}"
+							],
+							"path": [
+								"admin",
+								"schedule",
+								":intelligentPlaylistId"
+							],
+							"variable": [
+								{
+									"key": "intelligentPlaylistId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Intelligent Playlist Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\t\"id\": \"{itemId}\",\r\n\t\"collections\": \"{collections}\",\r\n\t\"endSearchData\": \"{endSearchData}\",\r\n    \"endSearchDurationInMinutes\": \"{endSearchDurationInMinutes}\",\r\n\t\"relatedContent\": \"{relatedContent}\",\r\n    \"scheduleItemType\": \"2\",\r\n\t\"searchDate\": \"{searchDate}\",\r\n    \"searchDurationInMinutes\": \"{searchDurationInMinutes}\",\r\n\t\"searchFilterType\": \"{searchFilterType}\",\r\n    \"sourceType\": \"2\",\r\n\t\"tags\": \"{tags}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentPlaylistId/item/:itemId",
+							"host": [
+								"{{serviceApiUrl}}"
+							],
+							"path": [
+								"admin",
+								"schedule",
+								":intelligentPlaylistId",
+								"item",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "intelligentPlaylistId",
+									"value": ""
+								},
+								{
+									"key": "itemId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update Intelligent Schedule Item",
+			"item": [
+				{
+					"name": "Update Intelligent Schedule Item Asset",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"asset\": {\r\n        \"id\": \"{id}\"\r\n    },\r\n    \"days\": [\r\n        {\r\n            \"id\": \"{id}\",\r\n            \"description\": \"{description}\"\r\n        }\r\n    ],\r\n    \"durationTimeCode\": \"{durationTimeCode}\",\r\n    \"endTimeCode\": \"{endTimeCode}\",\r\n\t\"id\": \"{itemId}\",\r\n\t\"previousItem\": \"{previousItem}\",\r\n    \"scheduleItemType\": \"1\",\r\n    \"sourceType\": \"3\",\r\n    \"timeCode\": \"{timeCode}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/item/:itemId",
+							"host": [
+								"{{serviceApiUrl}}"
+							],
+							"path": [
+								"admin",
+								"schedule",
+								":intelligentScheduleId",
+								"item",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "intelligentScheduleId",
+									"value": ""
+								},
+								{
+									"key": "itemId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Intelligent Schedule Item Live Channel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"days\": [\r\n        {\r\n            \"id\": \"{id}\",\r\n            \"description\": \"{description}\"\r\n        }\r\n    ],\r\n    \"durationTimeCode\": \"{durationTimeCode}\",\r\n    \"endTimeCode\": \"{endTimeCode}\",\r\n\t\"id\": \"{itemId}\",\r\n    \"liveChannel\": {\r\n        \"id\": \"{id}\",\r\n        \"description\": \"{description}\"\r\n    },\r\n\t\"previousItem\": \"{previousItem}\",\r\n    \"scheduleItemType\": \"1\",\r\n    \"sourceType\": \"4\",\r\n    \"timeCode\": \"{timeCode}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/item/:itemId",
+							"host": [
+								"{{serviceApiUrl}}"
+							],
+							"path": [
+								"admin",
+								"schedule",
+								":intelligentScheduleId",
+								"item",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "intelligentScheduleId",
+									"value": ""
+								},
+								{
+									"key": "itemId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Intelligent Schedule Item Playlist Schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"days\": [\r\n        {\r\n            \"id\": \"{id}\",\r\n            \"description\": \"{description}\"\r\n        }\r\n    ],\r\n    \"durationTimeCode\": \"{durationTimeCode}\",\r\n    \"endTimeCode\": \"{endTimeCode}\",\r\n\t\"id\": \"{itemId}\",\r\n    \"playlistSchedule\": {\r\n        \"id\": \"{id}\",\r\n        \"description\": \"{description}\"\r\n    },\r\n\t\"previousItem\": \"{previousItem}\",\r\n    \"scheduleItemType\": \"2\",\r\n    \"sourceType\": \"1\",\r\n    \"timeCode\": \"{timeCode}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/item/:itemId",
+							"host": [
+								"{{serviceApiUrl}}"
+							],
+							"path": [
+								"admin",
+								"schedule",
+								":intelligentScheduleId",
+								"item",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "intelligentScheduleId",
+									"value": ""
+								},
+								{
+									"key": "itemId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Intelligent Schedule Search Filter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"collections\": \"{collections}\",\r\n    \"days\": [\r\n        {\r\n            \"id\": \"{id}\",\r\n            \"description\": \"{description}\"\r\n        }\r\n    ],\r\n    \"durationTimeCode\": \"{durationTimeCode}\",\r\n\t\"endSearchDate\": \"{endSearchDate}\",\r\n    \"endSearchDurationInMinutes\": \"{endSearchDurationInMinutes}\",\r\n    \"endTimeCode\": \"{endTimeCode}\",\r\n\t\"id\": \"{itemId}\",\r\n\t\"previousItem\": \"{previousItem}\",\r\n    \"scheduleItemType\": \"1\",\r\n\t\"searchDate\": \"{searchDate}\",\r\n    \"searchDurationInMinutes\": \"{searchDurationInMinutes}\",\r\n    \"searchFilterType\": \"{searchFilterType}\",\r\n    \"sourceType\": \"2\",\r\n\t\"tags\": \"{tags}\",\r\n    \"timeCode\": \"{timeCode}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/item/:itemId",
+							"host": [
+								"{{serviceApiUrl}}"
+							],
+							"path": [
+								"admin",
+								"schedule",
+								":intelligentScheduleId",
+								"item",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "intelligentScheduleId",
+									"value": ""
+								},
+								{
+									"key": "itemId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create Intelligent Schedule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"defaultVideoAsset\": {\r\n        \"id\": \"{id}\"\r\n    },\r\n    \"name\": \"{name}\",\r\n    \"scheduleType\": 3,\r\n\t\"thumbnailAsset\": {\r\n\t\t\"id\": \"{id}\"\r\n\t},\r\n    \"timeZoneId\": \"{timeZoneId}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"defaultVideoAsset\": {\r\n\t\t\"id\": \"{id}\"\r\n\t},\r\n    \"loopPlaylist\": \"{loopPlaylist}\",\r\n    \"name\": \"{name}\",\r\n    \"scheduleType\": \"1\",\r\n\t\"thumbnailAsset\": {\r\n\t\t\"id\": \"{id}\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Playlist Video",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"asset\": {\r\n        \"id\": \"{id}\"\r\n    },\r\n    \"previousItem\": \"{previousItem}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:playlistId/item",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":playlistId",
+						"item"
+					],
+					"variable": [
+						{
+							"key": "playlistId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Intelligent Playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentPlaylistId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":intelligentPlaylistId"
+					],
+					"variable": [
+						{
+							"key": "intelligentPlaylistId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Intelligent Schedule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":intelligentScheduleId"
+					],
+					"variable": [
+						{
+							"key": "intelligentScheduleId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:playlistId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":playlistId"
+					],
+					"variable": [
+						{
+							"key": "playlistId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Intelligent Schedule Item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/item/:itemId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":intelligentScheduleId",
+						"item",
+						":itemId"
+					],
+					"variable": [
+						{
+							"key": "intelligentScheduleId",
+							"value": ""
+						},
+						{
+							"key": "itemId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Intelligent Playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentPlaylistId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":intelligentPlaylistId"
+					],
+					"variable": [
+						{
+							"key": "intelligentPlaylistId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Intelligent Schedule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":intelligentScheduleId"
+					],
+					"variable": [
+						{
+							"key": "intelligentScheduleId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:playlistId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":playlistId"
+					],
+					"variable": [
+						{
+							"key": "playlistId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Intelligent Schedule Item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/item/:itemId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":intelligentScheduleId",
+						"item",
+						":itemId"
+					],
+					"variable": [
+						{
+							"key": "intelligentScheduleId",
+							"value": ""
+						},
+						{
+							"key": "itemId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Intelligent Schedule Items",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/items",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":intelligentScheduleId",
+						"items"
+					],
+					"variable": [
+						{
+							"key": "intelligentScheduleId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move Playlist Item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{id}\",\r\n\t\"previousItem\": \"{previousItem}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:playlistId/item/:itemId.move",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":playlistId",
+						"item",
+						":itemId.move"
+					],
+					"variable": [
+						{
+							"key": "playlistId",
+							"value": ""
+						},
+						{
+							"key": "itemId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publish Intelligent Schedule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numberOfLockedDays\":\"{numberOfLockedDays}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/publish",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":intelligentScheduleId",
+						"publish"
+					],
+					"variable": [
+						{
+							"key": "intelligentScheduleId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Intelligent Schedule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/start?skipCleanupOnFailure=:skipCleanupOnFailure",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":intelligentScheduleId",
+						"start"
+					],
+					"query": [
+						{
+							"key": "skipCleanupOnFailure",
+							"value": ":skipCleanupOnFailure"
+						}
+					],
+					"variable": [
+						{
+							"key": "intelligentScheduleId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stop Intelligent Schedule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId/stop?forceStop=:forceStop",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":intelligentScheduleId",
+						"stop"
+					],
+					"query": [
+						{
+							"key": "forceStop",
+							"value": ":forceStop"
+						}
+					],
+					"variable": [
+						{
+							"key": "intelligentScheduleId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Intelligent Schedule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"defaultVideoAsset\": {\r\n        \"id\": \"{id}\"\r\n    },\r\n\t\"id\": \"{intelligentScheduleId}\",\r\n    \"name\": \"{name}\",\r\n    \"scheduleType\": 3,\r\n\t\"thumbnailAsset\": {\r\n\t\t\"id\": \"{id}\"\r\n\t},\r\n    \"timeZoneId\": \"{timeZoneId}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:intelligentScheduleId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":intelligentScheduleId"
+					],
+					"variable": [
+						{
+							"key": "intelligentScheduleId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updated Playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"defaultVideoAsset\": {\r\n\t\t\"id\": \"{id}\"\r\n\t},\r\n\t\"id\": \"{playlistId}\",\r\n    \"loopPlaylist\": \"{loopPlaylist}\",\r\n    \"name\": \"{name}\",\r\n    \"scheduleType\": \"1\",\r\n\t\"thumbnailAsset\": {\r\n\t\t\"id\": \"{id}\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/schedule/:playlistId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"schedule",
+						":playlistId"
+					],
+					"variable": [
+						{
+							"key": "playlistId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

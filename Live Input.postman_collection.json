@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "c21c3170-0228-429d-9932-b0c966bd2041",
+		"name": "Live Input",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-c21c3170-0228-429d-9932-b0c966bd2041?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Create Live Input",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{name}\",\r\n    \"type\": {\r\n        \"lookupId\": \"{typeLookupId}\",\r\n        \"description\": \"{typeDescription}\",\r\n        \"enumName\": \"{typeEnumName}\"\r\n    },\r\n    \"internalName\": \"{internalName}\",\r\n    \"sources\": [\r\n        {\r\n            \"url\": \"{sourceUrl}\"\r\n        }\r\n    ],\r\n\t\"sourceCidr\": \"{sourceCidr}\",\r\n\t\"isStandard\": \"{isStandard}\",\r\n\t\"videoAssetId\": \"{videoAssetId}\",\r\n\t\"destinations\": \"{destinations}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveInput",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveInput"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Live Input",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveInput/:inputId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveInput",
+						":inputId"
+					],
+					"variable": [
+						{
+							"key": "inputId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Live Input",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveInput/:inputId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveInput",
+						":inputId"
+					],
+					"variable": [
+						{
+							"key": "inputId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Live Inputs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveInput",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveInput"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Live Input",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"{id}\",\r\n    \"name\": \"{name}\",\r\n    \"type\": {\r\n        \"lookupId\": \"{typeLookupId}\",\r\n        \"description\": \"{typeDescription}\",\r\n        \"enumName\": \"{typeEnumName}\"\r\n    },\r\n    \"internalName\": \"{internalName}\",\r\n    \"sources\": [\r\n        {\r\n            \"url\": \"{sourceUrl}\"\r\n        }\r\n    ],\r\n\t\"sourceCidr\": \"{sourceCidr}\",\r\n\t\"isStandard\": \"{isStandard}\",\r\n\t\"videoAssetId\": \"{videoAssetId}\",\r\n\t\"destinations\": \"{destinations}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveInput/:inputId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveInput",
+						":inputId"
+					],
+					"variable": [
+						{
+							"key": "inputId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

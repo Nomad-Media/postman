@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "39043311-8df9-435b-b885-a4a0f9cf474a",
+		"name": "Ping",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-39043311-8df9-435b-b885-a4a0f9cf474a?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Ping User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"applicationId\": \"{applicationId}\",\n    \"userSessionId\": \"{userSessionId}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/account/ping",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"account",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

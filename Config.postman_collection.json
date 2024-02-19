@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "001fc07e-9020-4b92-a6be-4f1ef4eb5055",
+		"name": "Config",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-001fc07e-9020-4b92-a6be-4f1ef4eb5055?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Clear Server Cache",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/config/clearServerCache",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"config",
+						"clearServerCache"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Config",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/config?configType=:configType",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"config"
+					],
+					"query": [
+						{
+							"key": "configType",
+							"value": ":configType"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Server Time",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/config/serverTime",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"config",
+						"serverTime"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

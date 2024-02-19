@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "ea7c8c5a-1177-49af-816d-c5f0e5bf7215",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-ea7c8c5a-1177-49af-816d-c5f0e5bf7215?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/user/:userId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"user",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Content Attribute Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/user/userContentAttribute/:userId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"user",
+						"userContentAttribute",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Content Group Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/user/contentGroup/:userId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"user",
+						"contentGroup",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Content Security Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contentId\": \"{contentId}\",\r\n    \"contentDefinitionId\": \"{contentDefinitionId}\",\r\n    \"userId\": \"{userId}\",\r\n\t\"email\": \"{email}\",\r\n\t\"id\": \"{id}\",\r\n\t\"keyName\": \"{keyName}\",\r\n\t\"expirationDate\": \"{expirationDate}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/user/userContentSecurity/delete",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"user",
+						"userContentSecurity",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/user/userData/:userId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"user",
+						"userData",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Dislikes Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/user/dislike/:userId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"user",
+						"dislike",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Favorites Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/user/favorite/:userId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"user",
+						"favorite",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Likes Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/user/like/:userId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"user",
+						"like",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Saved Search Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/user/savedSearch/:userId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"user",
+						"savedSearch",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Session Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/user/userSession/:userId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"user",
+						"userSession",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Video Tracking Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contentId\": \"{contentId}\",\r\n    \"videoTrackingAttribute\": \"{videoTrackingAttribute}\",\r\n    \"userId\": \"{userId}\",\r\n\t\"assetId\": \"{assetId}\",\r\n\t\"id\": \"{id}\",\r\n\t\"isFirstQuartile\": \"{isFirstQuartile}\",\r\n\t\"isMidpoint\": \"{isMidpoint}\",\r\n\t\"isThirdQuartile\": \"{isThirdQuartile}\",\r\n\t\"isComplete\": \"{isComplete}\",\r\n\t\"isHidden\": \"{isHidden}\",\r\n\t\"maxSecond\": \"{maxSecond}\",\r\n\t\"totalSeconds\": \"{totalSeconds}\",\r\n\t\"lastBeaconDate\": \"{lastBeaconDate}\",\r\n\t\"keyName\": \"{keyName}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/user/userVideoTracking/delete",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"user",
+						"userVideoTracking",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

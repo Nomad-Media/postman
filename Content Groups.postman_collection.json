@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "ca991d49-e13c-463a-aec4-99260a4e2248",
+		"name": "Content Groups",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-ca991d49-e13c-463a-aec4-99260a4e2248?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Add Content to Content Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"{contents}\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/contentGroup/add/:contentGroupId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"contentGroup",
+						"add",
+						":contentGroupId"
+					],
+					"variable": [
+						{
+							"key": "contentGroupId",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Content Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{name}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/contentGroup",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"contentGroup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Content Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/contentGroup/:contentGroupId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"contentGroup",
+						":contentGroupId"
+					],
+					"variable": [
+						{
+							"key": "contentGroupId",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Content Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/contentgroup/:contentGroupId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"contentgroup",
+						":contentGroupId"
+					],
+					"variable": [
+						{
+							"key": "contentGroupId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Content Groups",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/contentgroup",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"contentgroup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Portal Groups",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"returnedGroupNames\": \"{returnedGroupNames}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/groups",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Content from Content Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"{contents}\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{commonApiUrl}}/contentGroup/remove/:contentGroupId",
+					"host": [
+						"{{commonApiUrl}}"
+					],
+					"path": [
+						"contentGroup",
+						"remove",
+						":contentGroupId"
+					],
+					"variable": [
+						{
+							"key": "contentGroupId",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rename Content Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{name}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/contentGroup/:contentGroupId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"contentGroup",
+						":contentGroupId"
+					],
+					"variable": [
+						{
+							"key": "contentGroupId",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Share Content Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"{userIds}\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/contentgroup/share/:contentGroupId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"contentgroup",
+						"share",
+						":contentGroupId"
+					],
+					"variable": [
+						{
+							"key": "contentGroupId",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stop Share of Content Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"{userIds}\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{commonApiUrl}}/stopshare/:contentGroupId",
+					"host": [
+						"{{commonApiUrl}}"
+					],
+					"path": [
+						"stopshare",
+						":contentGroupId"
+					],
+					"variable": [
+						{
+							"key": "contentGroupId",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

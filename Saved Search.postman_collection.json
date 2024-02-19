@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "ea9b3e70-e0c1-487b-b90f-69ae0382129f",
+		"name": "Saved Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-ea9b3e70-e0c1-487b-b90f-69ae0382129f?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Add Saved Search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"{name}\",\r\n\t\"featured\": \"{featured}\",\r\n\t\"bookmarked\": \"{bookmarked}\",\r\n\t\"public\": \"{public}\",\r\n\t\"pageSize\": \"{pageSize}\",\r\n\t\"sequence\": \"{sequence}\",\r\n\t\"type\": \"{type}\",\r\n\t\"criteria\": {\r\n\t\t\"query\": \"{query}\",\r\n\t\t\"pageOffset\": \"{pageOffset}\",\r\n\t\t\"pageSize\": \"{pageSize}\",\r\n\t\t\"filters\": \"{filters}\",\r\n\t\t\"sortFields\": \"{sortFields}\",\r\n\t\t\"searchResultFields\": \"{searchResultFields}\",\r\n\t\t\"similarAssetId\": \"{similarAssetId}\",\r\n\t\t\"minScore\": \"{minScore}\",\r\n\t\t\"excludeTotalRecordCount\": \"{excludeTotalRecordCount}\",\r\n\t\t\"filterBinder\": \"{filterBinder}\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/savedsearch",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"savedsearch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Saved Search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/savedsearch/:savedsearchId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"savedsearch",
+						":savedsearchId"
+					],
+					"variable": [
+						{
+							"key": "savedsearchId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Saved Search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/savedsearch/:savedsearchId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"savedsearch",
+						":savedsearchId"
+					],
+					"variable": [
+						{
+							"key": "savedsearchId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Saved Searches",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/savedsearch",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"savedsearch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Search Saved",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"criteria\": {\r\n\t\t\"query\": \"{query}\",\r\n\t\t\"pageOffset\": \"{pageOffset}\",\r\n\t\t\"pageSize\": \"{pageSize}\",\r\n\t\t\"filters\": \"{filters}\",\r\n\t\t\"sortFields\": \"{sortFields}\",\r\n\t\t\"searchResultFields\": \"{searchResultFields}\",\r\n\t\t\"similarAssetId\": \"{similarAssetId}\",\r\n\t\t\"minScore\": \"{minScore}\",\r\n\t\t\"excludeTotalRecordCount\": \"{excludeTotalRecordCount}\",\r\n\t\t\"filterBinder\": \"{filterBinder}\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/search-saved",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"search-saved"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Search Saved By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/search-saved/:id",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"search-saved",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"{name}\",\r\n\t\"featured\": \"{featured}\",\r\n\t\"bookmarked\": \"{bookmarked}\",\r\n\t\"public\": \"{public}\",\r\n\t\"sequence\": \"{sequence}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/savedsearch/:savedsearchId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"savedsearch",
+						":savedsearchId"
+					],
+					"variable": [
+						{
+							"key": "savedsearchId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Saved Search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"{id}\",\r\n\t\"name\": \"{name}\",\r\n\t\"featured\": \"{featured}\",\r\n\t\"bookmarked\": \"{bookmarked}\",\r\n\t\"public\": \"{public}\",\r\n\t\"pageSize\": \"{pageSize}\",\r\n\t\"sequence\": \"{sequence}\",\r\n\t\"type\": \"{type}\",\r\n\t\"criteria\": {\r\n\t\t\"query\": \"{query}\",\r\n\t\t\"pageOffset\": \"{pageOffset}\",\r\n\t\t\"pageSize\": \"{pageSize}\",\r\n\t\t\"filters\": \"{filters}\",\r\n\t\t\"sortFields\": \"{sortFields}\",\r\n\t\t\"searchResultFields\": \"{searchResultFields}\",\r\n\t\t\"similarAssetId\": \"{similarAssetId}\",\r\n\t\t\"minScore\": \"{minScore}\",\r\n\t\t\"excludeTotalRecordCount\": \"{excludeTotalRecordCount}\",\r\n\t\t\"filterBinder\": \"{filterBinder}\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/savedsearch/:savedsearchId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"savedsearch",
+						":savedsearchId"
+					],
+					"variable": [
+						{
+							"key": "savedsearchId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

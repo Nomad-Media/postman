@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "20c7fb31-4f2e-40a2-b783-7318b9569b75",
+		"name": "Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-20c7fb31-4f2e-40a2-b783-7318b9569b75?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Search Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pageOffset\": \"{offset}\",\r\n    \"pageSize\": \"{size}\", \r\n    \"query\": \"{query}\", \r\n    \"filters\": [\r\n        {\r\n            \"fieldName\": \"{name}\",\r\n            \"operator\": \"{operator}\",\r\n            \"values\": \"{value/s}\"\r\n        }\r\n    ],  \r\n    \"sortFields\": [\r\n        { \r\n            \"fieldName\": \"{name}\", \r\n            \"sortType\": \"Ascending | Descending\" \r\n        }\r\n    ],\r\n    \"searchResultFields\": [\r\n        {\r\n            \"name\": \"{name}\",\r\n            \"searchResultFields\": [\r\n                {\r\n                    \"name\": \"{name}\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n\t\"similarAssetId\": \"{similarAssetId}\",\r\n\t\"minScore\": \"{minScore}\",\r\n\t\"excludeTotalRecordCount\": \"{excludeTotalRecordCount}\",\r\n\t\"filterBinder\": \"{filterBinder}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/search",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Portal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pageOffset\": \"{offset}\",\n    \"pageSize\": \"{size}\", \n    \"query\": \"{query}\", \n    \"filters\": [\n        {\n            \"fieldName\": \"{name}\",\n            \"operator\": \"{operator}\",\n            \"values\": \"{value/s}\"\n        }\n    ],  \n    \"sortFields\": [\n        { \n            \"fieldName\": \"{name}\", \n            \"sortType\": \"Ascending | Descending\" \n        }\n    ],\n    \"searchResultFields\": [\n        {\n            \"name\": \"{name}\",\n            \"searchResultFields\": [\n                {\n                    \"name\": \"{name}\"\n                }\n            ]\n        }\n    ],\n\t\"similarAssetId\": \"{similarAssetId}\",\n\t\"minScore\": \"{minScore}\",\n\t\"excludeTotalRecordCount\": \"{excludeTotalRecordCount}\",\n\t\"filterBinder\": \"{filterBinder}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/search",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example: Retrieve All Movies Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filters\": [\n        {\n            \"fieldName\": \"contentDefinitionId\",\n            \"operator\": \"Equals\",\n            \"values\": \"eb710e28-7c44-492e-91f9-8acd0cd9331c\"\n        },\n        {\n            \"fieldName\": \"languageId\",\n            \"operator\": \"Equals\",\n            \"values\": \"c66131cd-27fc-4f83-9b89-b57575ac0ed8\"\n        }\n    ],\n    \"SearchResultFields\": [\n        {\n            \"name\": \"contentDefinitionId\"\n        },\n        {\n            \"name\": \"contentDefinitionTitle\"\n        },\n        {\n            \"name\": \"plot\"\n        },\n        {\n            \"name\": \"releaseDate\"\n        },\n        {\n            \"name\": \"genre\"\n        },\n        {\n            \"name\": \"image\",\n            \"SearchResultFields\": [\n                {\n                    \"name\": \"fullUrl\"\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/search",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example: Retrieve Movies with more Criteria Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filters\": [\n        {\n            \"fieldName\": \"contentDefinitionId\",\n            \"operator\": \"Equals\",\n            \"values\": \"909a11ec-d0b6-4164-8337-bc06be05de81\"\n        },\n        {\n            \"fieldName\": \"masterId\",\n            \"operator\": \"Equals\",\n            \"values\": \"c16734d1-147c-4d70-81b8-802835d7713b\"\n        },\n        {\n            \"fieldName\": \"languageId\",\n            \"operator\": \"Equals\",\n            \"values\": \"c66131cd-27fc-4f83-9b89-b57575ac0ed8\"\n        }\n    ],\n    \"pageOffset\": 0,\n    \"pageSize\": 100,\n    \"SearchResultFields\": [\n        {\n            \"name\": \"contentDefinitionId\"\n        },\n        {\n            \"name\": \"contentDefinitionTitle\"\n        },\n        {\n            \"name\": \"plot\"\n        },\n        {\n            \"name\": \"releaseDate\"\n        },\n        {\n            \"name\": \"genre\"\n        },\n        {\n            \"name\": \"image\",\n            \"SearchResultFields\": [\n                {\n                    \"name\": \"fullUrl\"\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/search",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example: Retrieve Videos for specific Movie Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filters\": [\n        {\n            \"fieldName\": \"contentDefinitionId\",\n            \"operator\": \"Equals\",\n            \"values\": \"9005b4d6-ffac-4f5b-b72a-c65cb5418972\"\n        },\n        {\n            \"fieldName\": \"uuidSearchField\",\n            \"operator\": \"Equals\",\n            \"values\": \"0ab2a00c-44c5-4021-bf4d-7005910dd700\"\n        },\n        {\n            \"fieldName\": \"languageId\",\n            \"operator\": \"Equals\",\n            \"values\": \"c66131cd-27fc-4f83-9b89-b57575ac0ed8\"\n        }\n    ],\n    \"pageOffset\": 0,\n    \"pageSize\": 100,\n    \"SearchResultFields\": [\n        {\n            \"name\": \"name\"\n        },\n        {\n            \"name\": \"description\"\n        },\n        {\n            \"name\": \"lastModifiedDate\"\n        },\n        {\n            \"name\": \"video\",\n            \"searchResultFields\": [\n                {\n                    \"name\": \"fullUrl\"\n                },\n                {\n                    \"name\": \"videoDuration\"\n                },\n                {\n                    \"name\": \"videoDurationSeconds\"\n                }\n            ]\n        },\n        {\n            \"name\": \"liveChannel\",\n            \"searchResultFields\": [\n                {\n                    \"name\": \"status\"\n                },\n                {\n                    \"name\": \"outputLiveVideoUrl\"\n                }\n            ]\n        },\n        {\n            \"name\": \"relatedVideos\",\n            \"searchResultFields\": [\n                {\n                    \"name\": \"title\"\n                },\n                {\n                    \"name\": \"fullUrl\"\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/search",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example: Retrieve Running Live Channels Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filters\": [\n        {\n            \"fieldName\": \"contentDefinitionId\",\n            \"operator\": \"Equals\",\n            \"values\": \"bf8ac754-5b8b-4330-b1aa-76f15fb7f673\"\n        },\n        {\n            \"fieldName\": \"status\",\n            \"operator\": \"Equals\",\n            \"values\": \"26a760ba-c3ca-49e8-8261-c2542b25a405\"\n        },\n        {\n            \"fieldName\": \"languageId\",\n            \"operator\": \"Equals\",\n            \"values\": \"c66131cd-27fc-4f83-9b89-b57575ac0ed8\"\n        }\n    ],\n    \"pageOffset\": 0,\n    \"pageSize\": 100,\n    \"SearchResultFields\": [\n        {\n            \"name\": \"id\"\n        },\n        {\n            \"name\": \"status\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/search",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example: Retrieve Video Details Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filters\": [\n        {\n            \"fieldName\": \"contentDefinitionId\",\n            \"operator\": \"Equals\",\n            \"values\": \"9005b4d6-ffac-4f5b-b72a-c65cb5418972\"\n        },\n        {\n            \"fieldName\": \"masterId\",\n            \"operator\": \"Equals\",\n            \"values\": \"66e63a57-45f7-47a9-99b7-2e950d2309fa\"\n        },\n        {\n            \"fieldName\": \"languageId\",\n            \"operator\": \"Equals\",\n            \"values\": \"c66131cd-27fc-4f83-9b89-b57575ac0ed8\"\n        }\n    ],\n    \"pageOffset\": 0,\n    \"pageSize\": 100,\n    \"SearchResultFields\": [\n        {\n            \"name\": \"contentDefinitionId\"\n        },\n        {\n            \"name\": \"contentDefinitionTitle\"\n        },\n        {\n            \"name\": \"slug\"\n        },\n        {\n            \"name\": \"description\"\n        },\n        {\n            \"name\": \"status\"\n        },\n        {\n            \"name\": \"sequence\"\n        },\n        {\n            \"name\": \"thumbnailImage\",\n            \"searchResultFields\": [\n                {\n                    \"name\": \"fullUrl\"\n                }\n            ]\n        },\n        {\n            \"name\": \"video\",\n            \"searchResultFields\": [\n                {\n                    \"name\": \"fullUrl\"\n                }\n            ]\n        },\n        {\n            \"name\": \"liveChannel\",\n            \"searchResultFields\": [\n                {\n                    \"name\": \"fullUrl\"\n                }\n            ]\n        },\n        {\n            \"name\": \"relatedVideos\",\n            \"searchResultFields\": [\n                {\n                    \"name\": \"fullUrl\"\n                }\n            ]\n        },\n        {\n            \"name\": \"brands\"\n        },\n        {\n            \"name\": \"products\"\n        },\n        {\n            \"name\": \"categories\"\n        },\n        {\n            \"name\": \"superCategories\"\n        },\n        {\n            \"name\": \"hosts\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/portal/search",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"portal",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

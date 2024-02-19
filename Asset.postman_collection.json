@@ -1,0 +1,1804 @@
+{
+	"info": {
+		"_postman_id": "918340f0-e7b8-47b0-b681-ad832676a025",
+		"name": "Asset",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-918340f0-e7b8-47b0-b681-ad832676a025?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Archive Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/archive",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"archive"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clip Asset Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startTimeCode\": \"{startTimeCode}\",\r\n    \"endTimeCode\": \"{endTimeCode}\",\r\n    \"title\": \"{title}\",\r\n    \"outputFolderId\": \"{outputFolderId}\",\r\n    \"tags\": \"{tags}\",\r\n    \"collections\": \"{collections}\",\r\n    \"relatedContent\": \"{relatedContent}\",\r\n    \"videoBitrate\": \"{videoBitrate}\",\r\n    \"audioTracks\": \"{audioTracks}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/clip",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"clip"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clip Asset Portal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startTimeCode\": \"{startTimeCode}\",\r\n    \"endTimeCode\": \"{endTimeCode}\",\r\n    \"title\": \"{title}\",\r\n    \"outputFolderId\": \"{outputFolderId}\",\r\n    \"tags\": \"{tags}\",\r\n    \"collections\": \"{collections}\",\r\n    \"relatedContent\": \"{relatedContent}\",\r\n    \"videoBitrate\": \"{videoBitrate}\",\r\n    \"audioTracks\": \"{audioTracks}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/:assetId/clip",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						":assetId",
+						"clip"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Copy Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"targetIds\": \"{targetIds}\",\r\n    \"actionArguments\": { \r\n        \"destinationFolderAssetId\": \"{destinationFolderAssetId}\"\r\n    },\r\n    \"contentDefinitionId\": \"{contentDefinitionId}\",\r\n    \"userId\": \"{userId}\",\r\n    \"resolverExempt\": \"{resolverExempt}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/copy",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						"copy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Annotation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{id}\",\r\n    \"startTimeCode\": \"{startTimeCode}\",\r\n    \"endTimeCode\": \"{endTimeCode}\",\r\n    \"properties\": {\r\n        \"firstKeyword\": \"{firstKeyword}\",\r\n        \"secondKeyword\": \"{secondKeyword}\",\r\n        \"description\": \"{description}\",\r\n        \"country\": {\r\n            \"id\": \"{id}\",\r\n            \"description\": \"{description}\"\r\n        }\r\n    },\r\n    \"contentId\": \"{contentId}\",\r\n    \"imageUrl\": \"{imageUrl}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/:assetId/annotation",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						":assetId",
+						"annotation"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Asset Ad Break",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"{id}\",\r\n\t\"timeCode\": \"{timeCode}\",\r\n\t\"tags\": \"{tags}\",\r\n\t\"labels\": \"{labels}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/adbreak",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"adbreak"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Folder Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"displayName\": \"{displayName}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:parentId/create-folder",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":parentId",
+						"create-folder"
+					],
+					"variable": [
+						{
+							"key": "parentId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Placeholder Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"assetName\": \"{assetName}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:parentId/create-placeholder",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":parentId",
+						"create-placeholder"
+					],
+					"variable": [
+						{
+							"key": "parentId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Screenshot At Timecode",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"timeCode\": \"{timeCode}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/screenshot",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"screenshot"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Annotation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/:assetId/annotation",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						":assetId",
+						"annotation"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Asset Ad Break",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/adbreak",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"adbreak"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download Archive Asset Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"assetIds\": \"{assetIds}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/download-archive",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						"download-archive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download Archive Asset Portal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"assetIds\": \"{assetIds}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/download-archive",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						"download-archive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Duplicate Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/duplicate",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"duplicate"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Annotations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/:assetId/annotation",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						":assetId",
+						"annotation"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset Ad Break",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/adbreak",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"adbreak"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset Child Nodes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/getAssetChildNodes?folderId=:folderId&sortColumn=:sortColumn&isDesc=:isDesc&pageIndex=:pageIndex&pageSize=:pageSize",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"getAssetChildNodes"
+					],
+					"query": [
+						{
+							"key": "folderId",
+							"value": ":folderId"
+						},
+						{
+							"key": "sortColumn",
+							"value": ":sortColumn"
+						},
+						{
+							"key": "isDesc",
+							"value": ":isDesc"
+						},
+						{
+							"key": "pageIndex",
+							"value": ":pageIndex"
+						},
+						{
+							"key": "pageSize",
+							"value": ":pageSize"
+						}
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset Details Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/detail",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"detail"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset Details Portal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/:assetId/detail",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						":assetId",
+						"detail"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset Manifest With Cookies Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/set-cookies/:cookieId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"set-cookies",
+						":cookieId"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "cookieId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset Manifest With Cookies Portal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/:assetId/set-cookies/:cookieId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						":assetId",
+						"set-cookies",
+						":cookieId"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "cookieId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset Metadata Summary",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/metadata-summary",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"metadata-summary"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset Parent Folder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/parent-folder?pageSize=:pageSize",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"parent-folder"
+					],
+					"query": [
+						{
+							"key": "pageSize",
+							"value": ":pageSize"
+						}
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset Screenshot Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/:segmentId/:screenshotId/detail",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						":segmentId",
+						":screenshotId",
+						"detail"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "segmentId",
+							"value": ""
+						},
+						{
+							"key": "screenshotId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset Segment Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/:segmentId/detail",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						":segmentId",
+						"detail"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "segmentId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Upload Parts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/upload/:uploadId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						"upload",
+						":uploadId"
+					],
+					"variable": [
+						{
+							"key": "uploadId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Uploads",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/upload?includeCompletedUploads=:includeCompletedUploads",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						"upload"
+					],
+					"query": [
+						{
+							"key": "includeCompletedUploads",
+							"value": ":includeCompletedUploads"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Import Annotations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n\t{\r\n\t\t\"endTimeCode\": \"{endTimeCode}\",\r\n\t\t\"id\": \"{id}\",\r\n\t\t\"startTimeCode\": \"{startTimeCode}\"\r\n\t}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/:assetId/annotation/import",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						":assetId",
+						"annotation",
+						"import"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/index",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"index"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Restore Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"profile\": \"{profile}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/:assetId/localRestore",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						":assetId",
+						"localRestore"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"actionArguments\": {\r\n\t\t\"destinationFolderAssetId\": \"{destinationFolderAssetId}\"\r\n\t},\r\n\t\"targetIds\": \"{targetIds}\",\r\n\t\"batchAction\": \"{batchAction}\",\r\n\t\"contentDefinitionId\": \"{contentDefinitionId}\",\r\n\t\"schemaName\": \"{schemaName}\",\r\n\t\"userId\": \"{userId}\",\r\n\t\"resolverExempt\": \"{resolverExempt}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/move",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"move"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Records Asset Tracking Beacon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/tracking?trackingEvent=:trackingEvent&assetId=:assetId&liveChannelId=:liveChannelId&contentId=:contentId&second=:second",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						"tracking"
+					],
+					"query": [
+						{
+							"key": "trackingEvent",
+							"value": ":trackingEvent"
+						},
+						{
+							"key": "assetId",
+							"value": ":assetId"
+						},
+						{
+							"key": "liveChannelId",
+							"value": ":liveChannelId"
+						},
+						{
+							"key": "contentId",
+							"value": ":contentId"
+						},
+						{
+							"key": "second",
+							"value": ":second"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"{id}\",\r\n\t\"parentId\": \"{parentId}\",\r\n\t\"displayObjectKey\": \"{displayObjectKey}\",\r\n\t\"bucketName\": \"{bucketName}\",\r\n\t\"objectKey\": \"{objectKey}\",\r\n\t\"eTag\": \"{eTag}\",\r\n\t\"tags\": \"{tags}\",\r\n\t\"collections\": \"{collections}\",\r\n\t\"relatedContent\": \"{relatedContent}\",\r\n\t\"sequencer\": \"{sequencer}\",\r\n\t\"assetStatus\": \"{assetStatus}\",\r\n\t\"storageClass\": \"{storageClass}\",\r\n\t\"assetType\": \"{assetType}\",\r\n\t\"contentLength\": \"{contentLength}\",\r\n\t\"storageEventName\": \"{storageEventName}\",\r\n\t\"createdDate\": \"{createdDate}\",\r\n\t\"storageSourceIpAddress\": \"{storageSourceIpAddress}\",\r\n\t\"startMediaProcessor\": \"{startMediaProcessor}\",\r\n\t\"deleteMissingAsset\": \"{deleteMissingAsset}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/register",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reprocess Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"targetIds\": \"{targetIds}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/reprocess",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						"reprocess"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restore Asset Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/restore",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"restore"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restore Asset Portal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/:assetId/restore",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						":assetId",
+						"restore"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Share Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"assetId\": \"{assetId}\",\r\n\t\"nomadUsers\": \"{nomadUsers}\",\r\n\t\"externalUsers\": \"{externalUsers}\",\r\n\t\"shareDuratonInHours\": \"{shareDuratonInHours}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/:assetId/share",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						":assetId",
+						"share"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Workflow",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"actionArguments\": {\r\n\t\t\"workflowName\": \"{workflowName}\"\r\n\t},\r\n\t\"targetIds\": \"{targetIds}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/startWorkflow",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						"startWorkflow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Annotation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{id}\",\r\n    \"startTimeCode\": \"{startTimeCode}\",\r\n    \"endTimeCode\": \"{endTimeCode}\",\r\n    \"properties\": {\r\n        \"firstKeyword\": \"{firstKeyword}\",\r\n        \"secondKeyword\": \"{secondKeyword}\",\r\n        \"description\": \"{description}\",\r\n        \"country\": {\r\n            \"id\": \"{id}\",\r\n            \"description\": \"{description}\"\r\n        }\r\n    },\r\n    \"contentId\": \"{contentId}\",\r\n    \"imageUrl\": \"{imageUrl}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/:assetId/annotation/:annotationId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						":assetId",
+						"annotation",
+						":annotationId"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "annotationId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"displayName\": \"{displayName}\",\r\n\t\"displayDate\": \"{displayDate}\",\r\n\t\"availableStartDate\": \"{availableStartDate}\",\r\n\t\"availableEndDate\": \"{availableEndDate}\",\r\n\t\"customProperties\": \"{customProperties}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Asset Ad Break",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"{id}\",\r\n\t\"timeCode\": \"{timeCode}\",\r\n\t\"tags\": \"{tags}\",\r\n\t\"labels\": \"{labels}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/adbreak/:adbreakId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"adbreak",
+						":adbreakId"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						},
+						{
+							"key": "adbreakId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Asset Language",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"languageId\": \"{languageId}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/:assetId/language",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						":assetId",
+						"language"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

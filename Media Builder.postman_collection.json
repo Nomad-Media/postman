@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "ae95b595-e24b-4e1c-9085-9e5dfaf68ae3",
+		"name": "Media Builder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-ae95b595-e24b-4e1c-9085-9e5dfaf68ae3?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Create Media Builder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"{name}\",\r\n\t\"destinationFolderId\": \"{destinationFolderId}\",\r\n\t\"collections\": \"{collections}\",\r\n\t\"relatedContent\": \"{relatedContent}\",\r\n\t\"properties\": \"{properties}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/mediaBuilder",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"mediaBuilder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Media Builder Item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"sourceAssetId\": \"{sourceAssetId}\",\r\n\t\"startTimeCode\": \"{startTimeCode}\",\r\n\t\"endTimeCode\": \"{endTimeCode}\",\r\n\t\"sourceAnnotationId\": \"{sourceAnnotationId}\",\r\n\t\"relatedContent\": \"{relatedContent}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/mediaBuilder/:mediaBuilderId/items",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"mediaBuilder",
+						":mediaBuilderId",
+						"items"
+					],
+					"variable": [
+						{
+							"key": "mediaBuilderId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Media Builder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/mediaBuilder/:mediaBuilderId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"mediaBuilder",
+						":mediaBuilderId"
+					],
+					"variable": [
+						{
+							"key": "mediaBuilderId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Media Builder Item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/mediaBuilder/:mediaBuilderId/items/:itemId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"mediaBuilder",
+						":mediaBuilderId",
+						"items",
+						":itemId"
+					],
+					"variable": [
+						{
+							"key": "mediaBuilderId",
+							"value": ""
+						},
+						{
+							"key": "itemId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Duplicate Media Builder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"{name}\",\r\n\t\"destinationFolderId\": \"{destinationFolderId}\",\r\n\t\"collections\": \"{collections}\",\r\n\t\"relatedContent\": \"{relatedContent}\",\r\n\t\"properties\": \"{properties}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/mediaBuilder/:mediaBuilderId/duplicate",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"mediaBuilder",
+						":mediaBuilderId",
+						"duplicate"
+					],
+					"variable": [
+						{
+							"key": "mediaBuilderId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Media Builder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/mediaBuilder/:mediaBuilderId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"mediaBuilder",
+						":mediaBuilderId"
+					],
+					"variable": [
+						{
+							"key": "mediaBuilderId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Media Builders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/mediaBuilder",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"mediaBuilder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Media Builder Items",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/mediaBuilder/:mediaBuilderId/items",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"mediaBuilder",
+						":mediaBuilderId",
+						"items"
+					],
+					"variable": [
+						{
+							"key": "mediaBuilderId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move Media Builder Item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"previousId\": \"{previousId}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/mediaBuilder/:mediaBuilderId/items/:itemId/move",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"mediaBuilder",
+						":mediaBuilderId",
+						"items",
+						":itemId",
+						"move"
+					],
+					"variable": [
+						{
+							"key": "mediaBuilderId",
+							"value": ""
+						},
+						{
+							"key": "itemId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Render Media Builder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/mediaBuilder/:mediaBuilderId/render",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"mediaBuilder",
+						":mediaBuilderId",
+						"render"
+					],
+					"variable": [
+						{
+							"key": "mediaBuilderId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Media Builder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"{name}\",\r\n\t\"destinationFolderId\": \"{destinationFolderId}\",\r\n\t\"collections\": \"{collections}\",\r\n\t\"relatedContent\": \"{relatedContent}\",\r\n\t\"properties\": \"{properties}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/mediaBuilder/:mediaBuilderId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"mediaBuilder",
+						":mediaBuilderId"
+					],
+					"variable": [
+						{
+							"key": "mediaBuilderId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

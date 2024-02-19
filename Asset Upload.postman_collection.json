@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "2483b548-36ef-46ff-bc09-be6e1f7879ce",
+		"name": "Asset Upload",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-2483b548-36ef-46ff-bc09-be6e1f7879ce?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Cancel Upload",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/upload/:assetId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						"upload",
+						":assetId"
+					],
+					"variable": [
+						{
+							"key": "assetId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Complete Upload",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/upload/:assetUploadId/complete",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						"upload",
+						":assetUploadId",
+						"complete"
+					],
+					"variable": [
+						{
+							"key": "assetUploadId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Upload",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"parentId\": \"{parentId}\",\r\n    \"contentLength\": \"{contentLength}\",\r\n    \"uploadOverwriteOption\": \"{uploadOverwriteOption}\",\r\n    \"chunkSize\": \"{chunkSize}\",\r\n    \"relativePath\": \"{relativePath}\",\r\n    \"languageId\": \"{languageId}\",\r\n    \"displayName\": \"{displayName}\",\r\n    \"relatedContentId\": \"{relatedContentId}\",\r\n    \"existingAssetId\": \"{existingAssetId}\",\r\n    \"relatedAssetId\": \"{relatedAssetId}\",\r\n\t\"createTranscribeRelatedAsset\": \"{createTranscribeRelatedAsset}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/upload/start",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						"upload",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Part Complete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"etag\": \"{etag}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/admin/asset/upload/part/:partId/complete",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"admin",
+						"asset",
+						"upload",
+						"part",
+						":partId",
+						"complete"
+					],
+					"variable": [
+						{
+							"key": "partId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
