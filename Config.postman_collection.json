@@ -96,5 +96,59 @@
 			},
 			"response": []
 		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const USERNAME = pm.environment.get(\"USERNAME\");",
+					"const PASSWORD = pm.environment.get(\"PASSWORD\");",
+					"const SERVICE_API_URL = pm.environment.get(\"serviceApiUrl\");",
+					"",
+					"const requestData = {",
+					"\t\"username\": USERNAME,",
+					"\t\"password\": PASSWORD",
+					"};",
+					"",
+					"const requestOptions = {",
+					"\turl: `${SERVICE_API_URL}/account/login`,",
+					"\tmethod: \"POST\",",
+					"\theader: {",
+					"\t\t\"Content-Type\": \"application/json\"",
+					"\t},",
+					"\tbody: {",
+					"\t\tmode: \"raw\",",
+					"\t\traw: JSON.stringify(requestData)",
+					"\t}",
+					"};",
+					"",
+					"pm.sendRequest(requestOptions, function (err, response)",
+					"{",
+					"\tif (err)",
+					"\t{",
+					"\t\tconsole.error(\"Invalid Login\")",
+					"\t}",
+					"\telse",
+					"\t{",
+					"\t\tconst RESPONSE = response.json();",
+					"",
+					"\t\tpm.environment.set(\"TOKEN\", RESPONSE.token);",
+					"\t\tpm.environment.set(\"REFRESH_TOKEN\", RESPONSE.refreshToken);",
+					"\t}",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
 	]
 }
