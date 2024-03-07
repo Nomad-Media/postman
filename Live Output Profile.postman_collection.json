@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "e925ed81-8195-4499-99a2-989ba0e57b82",
+		"name": "Live Output Profile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-e925ed81-8195-4499-99a2-989ba0e57b82?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Create Live Output Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"{name}\",\r\n\t\"outputType\": \"{outputType}\",\r\n\t\"enable\": \"{enable}\",\r\n\t\"audioBitrate\": \"{audioBitrate}\",\r\n\t\"outputStreamKey\": \"{outputStreamKey}\",\r\n\t\"outputUrl\": \"{outputUrl}\",\r\n\t\"secondaryOutputStreamKey\": \"{secondaryOutputStreamKey}\",\r\n\t\"secondaryOutputUrl\": \"{secondaryOutputUrl}\",\r\n\t\"videoBitrate\": \"{videoBitrate}\",\r\n\t\"videoCodec\": \"{videoCodec}\",\r\n\t\"videoFramesPerSecond\": \"{videoFramesPerSecond}\",\r\n\t\"videoHeight\": \"{videoHeight}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveOutputProfile",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveOutputProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Live Output Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveOutputProfile/:liveOutputId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveOutputProfile",
+						":liveOutputId"
+					],
+					"variable": [
+						{
+							"key": "liveOutputId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Live Output Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveOutputProfile/:liveOutputId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveOutputProfile",
+						":liveOutputId"
+					],
+					"variable": [
+						{
+							"key": "liveOutputId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Live Output Profiles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveOutputProfile",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveOutputProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Live Output Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"{name}\",\r\n\t\"outputType\": \"{outputType}\",\r\n\t\"enable\": \"{enable}\",\r\n\t\"audioBitrate\": \"{audioBitrate}\",\r\n\t\"outputStreamKey\": \"{outputStreamKey}\",\r\n\t\"outputUrl\": \"{outputUrl}\",\r\n\t\"secondaryOutputStreamKey\": \"{secondaryOutputStreamKey}\",\r\n\t\"secondaryOutputUrl\": \"{secondaryOutputUrl}\",\r\n\t\"videoBitrate\": \"{videoBitrate}\",\r\n\t\"videoCodec\": \"{videoCodec}\",\r\n\t\"videoFramesPerSecond\": \"{videoFramesPerSecond}\",\r\n\t\"videoHeight\": \"{videoHeight}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/liveOutputProfile/:liveOutputId",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"liveOutputProfile",
+						":liveOutputId"
+					],
+					"variable": [
+						{
+							"key": "liveOutputId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Live Output Types",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/lookup/117",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"lookup",
+						"117"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const USERNAME = pm.environment.get(\"USERNAME\");",
+					"const PASSWORD = pm.environment.get(\"PASSWORD\");",
+					"const SERVICE_API_URL = pm.environment.get(\"serviceApiUrl\");",
+					"",
+					"const requestData = {",
+					"\t\"username\": USERNAME,",
+					"\t\"password\": PASSWORD",
+					"};",
+					"",
+					"const requestOptions = {",
+					"\turl: `${SERVICE_API_URL}/account/login`,",
+					"\tmethod: \"POST\",",
+					"\theader: {",
+					"\t\t\"Content-Type\": \"application/json\"",
+					"\t},",
+					"\tbody: {",
+					"\t\tmode: \"raw\",",
+					"\t\traw: JSON.stringify(requestData)",
+					"\t}",
+					"};",
+					"",
+					"pm.sendRequest(requestOptions, function (err, response)",
+					"{",
+					"\tif (err)",
+					"\t{",
+					"\t\tconsole.error(\"Invalid Login\")",
+					"\t}",
+					"\telse",
+					"\t{",
+					"\t\tconst RESPONSE = response.json();",
+					"",
+					"\t\tpm.environment.set(\"TOKEN\", RESPONSE.token);",
+					"\t\tpm.environment.set(\"REFRESH_TOKEN\", RESPONSE.refreshToken);",
+					"\t}",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
