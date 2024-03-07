@@ -27,3 +27,7 @@ To create a new environment, do the following:
 Create two new environmental variables, named username and password. Set the password type to secret.
 
 ![](images/envVar.png)
+
+> 📘 Note
+>
+> To find out more about the requests and the environment variables, please refer to the [Nomad API Overview](https://developer.nomad-cms.com/docs/nomad-api-modules)
