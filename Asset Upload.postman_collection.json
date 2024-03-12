@@ -81,6 +81,44 @@
 			"response": []
 		},
 		{
+			"name": "Start Related Asset Upload",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contentLength\": \"{contentLength}\",\r\n    \"chunkSize\": \"{chunkSize}\",\r\n    \"existingAssetId\": \"{existingAssetId}\",\r\n    \"newRelatedAssetMetadataType\": \"{newRelatedAssetMetadataType}\",\r\n    \"relatedAssetId\": \"{relatedAssetId\",\r\n    \"relativePath\": \"{relativePath}\",\r\n    \"uploadOverwriteOption\": \"{uploadOverwriteOption}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/asset/upload/start-related-asset",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"asset",
+						"upload",
+						"start-related-asset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Start Upload",
 			"request": {
 				"auth": {
