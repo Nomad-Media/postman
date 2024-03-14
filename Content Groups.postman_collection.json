@@ -24,7 +24,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    \"{contents}\"\n]",
+					"raw": "[\n    \"{contentIds}\"\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -236,7 +236,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    \"{contents}\"\n]",
+					"raw": "[\n    \"{contentIds}\"\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -244,9 +244,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{commonApiUrl}}/contentGroup/remove/:contentGroupId",
+					"raw": "{{serviceApiUrl}}/contentGroup/remove/:contentGroupId",
 					"host": [
-						"{{commonApiUrl}}"
+						"{{serviceApiUrl}}"
 					],
 					"path": [
 						"contentGroup",
