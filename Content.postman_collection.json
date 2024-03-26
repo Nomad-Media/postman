@@ -175,10 +175,20 @@
 		{
 			"name": "Get Content User Track",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{serviceApiUrl}}/content/:contentDefinitionId/user-track/:contentId?sortColumn=:sortColumn&isDesc=:isDesc&pageIndex=:pageIndex&sizeIndex=:sizeIndex",
+					"raw": "{{serviceApiUrl}}/content/:contentDefinitionId/user-track/:contentId?sortColumn=:sortColumn&isDesc=:isDesc&pageIndex=:pageIndex&pageSize=:pageSize",
 					"host": [
 						"{{serviceApiUrl}}"
 					],
@@ -202,8 +212,8 @@
 							"value": ":pageIndex"
 						},
 						{
-							"key": "sizeIndex",
-							"value": ":sizeIndex"
+							"key": "pageSize",
+							"value": ":pageSize"
 						}
 					],
 					"variable": [
