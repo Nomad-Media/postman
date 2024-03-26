@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "0c1e5f88-a4da-45d9-9b68-0478e3105a22",
-		"name": "Content Admin",
+		"name": "Content Metadata",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "27079276",
 		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-0c1e5f88-a4da-45d9-9b68-0478e3105a22?action=share&source=collection_link&creator=27079276"
