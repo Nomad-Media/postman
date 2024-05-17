@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "3cbbffe1-5663-489c-801a-7af9a6d71946",
+		"name": "Content Definition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27079276",
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-3cbbffe1-5663-489c-801a-7af9a6d71946?action=share&source=collection_link&creator=27079276"
+	},
+	"item": [
+		{
+			"name": "Get Content Definition",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/contentDefinition/:id",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"contentDefinition",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"uuid": "93c8a791-7b65-4645-b1a2-0745c65b6fdc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Content Definitions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/contentDefinition",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"contentDefinition"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"const USERNAME = pm.environment.get(\"USERNAME\");\r",
+					"const PASSWORD = pm.environment.get(\"PASSWORD\");\r",
+					"const SERVICE_API_URL = pm.environment.get(\"serviceApiUrl\");\r",
+					"\r",
+					"const requestData = {\r",
+					"\t\"username\": USERNAME,\r",
+					"\t\"password\": PASSWORD\r",
+					"};\r",
+					"\r",
+					"const requestOptions = {\r",
+					"\turl: `${SERVICE_API_URL}/account/login`,\r",
+					"\tmethod: \"POST\",\r",
+					"\theader: {\r",
+					"\t\t\"Content-Type\": \"application/json\"\r",
+					"\t},\r",
+					"\tbody: {\r",
+					"\t\tmode: \"raw\",\r",
+					"\t\traw: JSON.stringify(requestData)\r",
+					"\t}\r",
+					"};\r",
+					"\r",
+					"pm.sendRequest(requestOptions, function (err, response)\r",
+					"{\r",
+					"\tif (err)\r",
+					"\t{\r",
+					"\t\tconsole.error(\"Invalid Login\")\r",
+					"\t}\r",
+					"\telse\r",
+					"\t{\r",
+					"\t\tconst RESPONSE = response.json();\r",
+					"\r",
+					"\t\tpm.environment.set(\"TOKEN\", RESPONSE.token);\r",
+					"\t\tpm.environment.set(\"REFRESH_TOKEN\", RESPONSE.refreshToken);\r",
+					"\t}\r",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
