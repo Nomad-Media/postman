@@ -4,9 +4,27 @@
 		"name": "Content Definition",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "27079276",
-		"_collection_link": "https://vibrantsoftware.postman.co/workspace/83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-3cbbffe1-5663-489c-801a-7af9a6d71946?action=share&source=collection_link&creator=27079276"
+		"_collection_link": "https://vibrantsoftware.postman.co/workspace/Nomad-API-Docs~83a0fb51-9efb-4123-adfd-cabee18dce16/collection/27079276-3cbbffe1-5663-489c-801a-7af9a6d71946?action=share&source=collection_link&creator=27079276"
 	},
 	"item": [
+		{
+			"name": "Create Content Definition",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serviceApiUrl}}/contentDefinition/New",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"contentDefinition",
+						"New"
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "Get Content Definition",
 			"request": {
@@ -34,8 +52,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "",
-							"uuid": "93c8a791-7b65-4645-b1a2-0745c65b6fdc"
+							"value": ""
 						}
 					]
 				}
@@ -64,6 +81,49 @@
 					],
 					"path": [
 						"contentDefinition"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Content Definition",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"contentDefinitionId\": \"{contentDefinitionId}\",\r\n\t\"editorTemplate\": \"{editorTemplate}\",\r\n\t\"isSystemModule\": \"{isSystemModule}\",\r\n\t\"useEditorFormOverride\": \"{useEditorFormOverride}\",\r\n\t\"contentFields\": \"{contentFields}\",\r\n\t\"properties\": {\r\n\t\t\"title\": \"{title}\",\r\n\t\t\"includeInTags\": \"{includeInTags}\",\r\n\t\t\"contentTypeId\": {\r\n\t\t\t\"description\": \"{description}\",\r\n\t\t\t\"id\": \"{id}\"\r\n\t\t},\r\n\t\t\"className\": \"{title}\",\r\n\t\t\"displayField\": {\r\n\t\t\t\"description\": \"{description}\",\r\n\t\t\t\"id\": \"{id}\"\r\n\t\t},\r\n\t\t\"contentDefinitionGroupId\": {\r\n\t\t\t\"description\": \"{description}\",\r\n\t\t\t\"id\": \"{id}\"\r\n\t\t},\r\n\t\t\"slugName\": \"{slugName}\",\r\n\t\t\"collectionName\": \"{title}\",\r\n\t\t\"indexContent\": \"{indexContent}\",\r\n\t\t\"assignedSecurityGroups\": \"{assignedSecurityGroups}\",\r\n\t\t\"assignedSystemRoles\": \"{assignedSystemRoles}\"\r\n\t},\r\n\t\"assignedSecurity\": \"{assignedSecurity}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serviceApiUrl}}/contentDefinition/:id",
+					"host": [
+						"{{serviceApiUrl}}"
+					],
+					"path": [
+						"contentDefinition",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
 					]
 				}
 			},
