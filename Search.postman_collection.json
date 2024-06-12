@@ -24,7 +24,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"pageOffset\": \"{offset}\",\r\n    \"pageSize\": \"{size}\", \r\n    \"query\": \"{query}\", \r\n    \"filters\": [\r\n        {\r\n            \"fieldName\": \"{name}\",\r\n            \"operator\": \"{operator}\",\r\n            \"values\": \"{value/s}\"\r\n        }\r\n    ],  \r\n    \"sortFields\": [\r\n        { \r\n            \"fieldName\": \"{name}\", \r\n            \"sortType\": \"Ascending | Descending\" \r\n        }\r\n    ],\r\n    \"searchResultFields\": [\r\n        {\r\n            \"name\": \"{name}\",\r\n            \"searchResultFields\": [\r\n                {\r\n                    \"name\": \"{name}\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n\t\"similarAssetId\": \"{similarAssetId}\",\r\n\t\"minScore\": \"{minScore}\",\r\n\t\"excludeTotalRecordCount\": \"{excludeTotalRecordCount}\",\r\n\t\"filterBinder\": \"{filterBinder}\"\r\n}",
+					"raw": "{\r\n    \"pageOffset\": \"{offset}\",\r\n    \"pageSize\": \"{size}\", \r\n    \"query\": \"{query}\", \r\n    \"filters\": [\r\n        {\r\n            \"fieldName\": \"{name}\",\r\n            \"operator\": \"{operator}\",\r\n            \"values\": \"{value/s}\"\r\n        }\r\n    ],  \r\n    \"sortFields\": [\r\n        { \r\n            \"fieldName\": \"{name}\", \r\n            \"sortType\": \"Ascending | Descending\" \r\n        }\r\n    ],\r\n    \"searchResultFields\": [\r\n        {\r\n            \"name\": \"{name}\",\r\n            \"searchResultFields\": [\r\n                {\r\n                    \"name\": \"{name}\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n\t\"fullUrlFieldNames\": \"{fullUrlFieldNames}\",\r\n\t\"distinctOnFieldNames\": \"{distinctOnFieldNames}\",\r\n\t\"includeVideoClips\": \"{distinctOnFieldNames}\",\r\n\t\"similarAssetId\": \"{similarAssetId}\",\r\n\t\"minScore\": \"{minScore}\",\r\n\t\"excludeTotalRecordCount\": \"{excludeTotalRecordCount}\",\r\n\t\"filterBinder\": \"{filterBinder}\",\r\n\t\"useLlmSearch\": \"{useLlmSearch}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -32,13 +32,19 @@
 					}
 				},
 				"url": {
-					"raw": "{{serviceApiUrl}}/admin/search",
+					"raw": "{{serviceApiUrl}}/admin/search?includeInternalFieldsInResults",
 					"host": [
 						"{{serviceApiUrl}}"
 					],
 					"path": [
 						"admin",
 						"search"
+					],
+					"query": [
+						{
+							"key": "includeInternalFieldsInResults",
+							"value": null
+						}
 					]
 				}
 			},
@@ -61,7 +67,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"pageOffset\": \"{offset}\",\n    \"pageSize\": \"{size}\", \n    \"query\": \"{query}\", \n    \"filters\": [\n        {\n            \"fieldName\": \"{name}\",\n            \"operator\": \"{operator}\",\n            \"values\": \"{value/s}\"\n        }\n    ],  \n    \"sortFields\": [\n        { \n            \"fieldName\": \"{name}\", \n            \"sortType\": \"Ascending | Descending\" \n        }\n    ],\n    \"searchResultFields\": [\n        {\n            \"name\": \"{name}\",\n            \"searchResultFields\": [\n                {\n                    \"name\": \"{name}\"\n                }\n            ]\n        }\n    ],\n\t\"similarAssetId\": \"{similarAssetId}\",\n\t\"minScore\": \"{minScore}\",\n\t\"excludeTotalRecordCount\": \"{excludeTotalRecordCount}\",\n\t\"filterBinder\": \"{filterBinder}\"\n}",
+					"raw": "{\n    \"pageOffset\": \"{offset}\",\n    \"pageSize\": \"{size}\", \n    \"query\": \"{query}\", \n    \"filters\": [\n        {\n            \"fieldName\": \"{name}\",\n            \"operator\": \"{operator}\",\n            \"values\": \"{value/s}\"\n        }\n    ],  \n    \"sortFields\": [\n        { \n            \"fieldName\": \"{name}\", \n            \"sortType\": \"Ascending | Descending\" \n        }\n    ],\n    \"searchResultFields\": [\n        {\n            \"name\": \"{name}\",\n            \"searchResultFields\": [\n                {\n                    \"name\": \"{name}\"\n                }\n            ]\n        }\n    ],\n\t\"fullUrlFieldNames\": \"{fullUrlFieldNames}\",\n\t\"distinctOnFieldNames\": \"{distinctOnFieldNames}\",\n\t\"includeVideoClips\": \"{distinctOnFieldNames}\",\n\t\"similarAssetId\": \"{similarAssetId}\",\n\t\"minScore\": \"{minScore}\",\n\t\"excludeTotalRecordCount\": \"{excludeTotalRecordCount}\",\n\t\"filterBinder\": \"{filterBinder}\",\n\t\"useLlmSearch\": \"{useLlmSearch}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -69,13 +75,19 @@
 					}
 				},
 				"url": {
-					"raw": "{{serviceApiUrl}}/portal/search",
+					"raw": "{{serviceApiUrl}}/portal/search?includeInternalFieldsInResults",
 					"host": [
 						"{{serviceApiUrl}}"
 					],
 					"path": [
 						"portal",
 						"search"
+					],
+					"query": [
+						{
+							"key": "includeInternalFieldsInResults",
+							"value": null
+						}
 					]
 				}
 			},
